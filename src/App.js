@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useCallback, useEffect, useState } from 'react';
+import AdminApp from './AdminApp';
+import { getUsers } from './AdminApp/constant';
 import './App.css';
 
 function App() {
+  const [userData, setUserData] = useState({status: '', data: []})
+   
+  useEffect(() => {
+    reloadHandler();
+  }, [])
+
+  const reloadHandler = useCallback(() => {
+    getUsers(setUserData);
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      {userData['status'] === 'loading' ? <div>...Loading</div> : 
+      userData['status'] === 'success' ? <AdminApp data={userData['data']} reloadHandler={reloadHandler}/> : 
+      <p className='error'>Something Went Wrong!</p>}
     </div>
   );
 }

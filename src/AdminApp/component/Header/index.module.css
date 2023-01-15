@@ -1,0 +1,109 @@
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8%;
+    box-sizing: border-box;
+
+    margin-bottom: 1rem;
+}
+
+.header-container > div:first-of-type {
+    flex-grow: 1;
+    display: flex;
+}
+
+.search-bar {
+    border: 1px solid rgba(224, 224, 224, 1);
+    width: 35%;
+    height: 38px;
+    margin: 0 0.6rem;
+    padding: 0 0.65rem;
+    background-color: white;
+    position: relative;
+    border-radius: 7px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.search-bar.focus , .search-bar.hover {
+    border: 1.2px solid rgb(81, 139, 184);
+}
+
+.search-bar > input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.search-bar > span {
+    position: absolute;
+    top:4px;    
+    right: 0;
+    color:rgb(196, 195, 195);
+   
+    width: fit-content;
+    padding: 0.4rem 0.9rem 0.4rem 0.4rem;
+    z-index: 1;
+}
+
+@media screen and (max-width: 960px) {
+    .header-container {
+        margin-bottom: 0.25rem;
+    }
+    .search-bar, .search-bar > input  {
+      font-size: 0.75rem;
+      height: 2.4rem;
+      border-radius: 4px;
+      padding: 0 0.35rem;
+      padding-bottom: 0.18rem;
+    }
+
+    .search-bar {
+        padding: 0;
+        flex-basis: 80%;
+        flex-shrink: 1;
+        margin: 0 0.25rem;
+    }
+    .search-bar > span {
+        top:4px; 
+        padding: 0.4rem 0.6rem 0.4rem 0.4rem;
+        z-index: 1;
+    }
+
+    .header-container button {
+        font-size: 0.55rem;
+        height: 2.2rem;
+        padding: 0.4em 1em;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+  }
+@media screen and (max-width: 640px) { 
+
+    .header-container {
+        margin-bottom: 0rem;
+        height: 5%;
+    }
+    .search-bar, .search-bar > input  {
+        font-size: 0.45rem;
+        height: 1.2rem;
+       
+    }
+
+    .search-bar > span {
+        font-size: inherit;
+        top:1px; 
+        padding: 0.2rem;
+        z-index: 1;
+    }
+
+    .header-container button {
+        font-size: 0.35rem;
+        height: 1rem;
+    }
+}

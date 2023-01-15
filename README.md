@@ -4,6 +4,8 @@ The app is created using react js. This is responsive  application containing de
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### `npm i` -> to install all the packages and create a node_module folder.
+### `npm start` ->  to run the app.
 ## Available Scripts
 
 In the project directory, you can run:

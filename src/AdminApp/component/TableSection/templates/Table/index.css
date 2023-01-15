@@ -1,0 +1,228 @@
+
+ .responsive-table{
+    padding: 0 0.75em;
+  }
+
+.responsive-table .table-header {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  z-index: 1;  
+  padding: 0.8em 1.8em;
+}
+ 
+.table-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 3.75em auto 0 auto ;
+  
+  height: auto;
+  min-height: 12.5em;
+  max-width: 99%;
+  width: auto;
+  padding: 0 0.75em;
+  padding-bottom: 0em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+ 
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+ 
+.table-container {
+  -mtables-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+   
+.responsive-table li {
+  border-radius: 6px;
+  padding: 0.25rem 0em;
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  margin-bottom: 0.45em;
+  text-align: left;
+  align-items: left;
+}
+ 
+ .responsive-table .table-container li {
+   padding: 0.5rem 1.5rem;
+   display: flex;
+   color: black;
+   background-color: #fff;
+   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+   font-weight: 500;
+ }
+
+ .responsive-table li > div {
+   display: flex;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+ }
+
+ .responsive-table li > div > textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+
+  border: 1px solid rgba(224, 224, 224, 1);
+  background-color: white;
+  padding: 0rem;
+  padding-right: 0.75rem;
+  height: 2.375em;
+  border-radius: 8px;
+  padding: 0.2rem 0.65rem;
+  margin-right: 0.25rem;
+  resize: none;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.responsive-table li > div > textarea:disabled {
+  background-color: transparent;
+  border-radius: 0;
+  padding:0;
+  border: none;
+  outline: none;
+}
+
+.responsive-table li > div > textarea:focus {
+  border-color: rgb(81, 139, 184); 
+}
+
+.responsive-table li > div >  button {
+  display: inline;
+  padding: 0.25em 0.65em;
+  font-size: 0.65em;
+  letter-spacing: 0.025em;
+  height: 2.5em;
+}
+
+.responsive-table li > div >  button:first-of-type {
+  margin-right: 0.5rem;
+} 
+ 
+ .responsive-table .table-container .table-row:hover {
+   transform: scale(1.01);
+   box-shadow: 0px 0px 9px 10px rgba(0, 0, 0, 0.1);
+ }
+ .responsive-table .col-1 {
+   flex-basis: 10%;
+ }
+ .responsive-table .col-2 {
+   flex-basis: 45%;
+ }
+ .responsive-table .col-3 {
+   flex-basis: 25%;
+ }
+ .responsive-table .col-4 {
+   flex-basis: 25%;
+ }
+ 
+ /* ######################################### responsive ############################################# */
+ 
+@media screen and (max-width: 960px) {
+  .responsive-table .table-header {
+    padding: 0.8em 2em;
+  }
+  .responsive-table li,  .responsive-table li textarea {
+    font-size: 0.7rem;
+  }
+
+  .table-container {
+    margin: 3em auto 0 auto ;
+  }
+
+  .table-row .action button {
+    border-radius: 3px;
+  }
+
+  .responsive-table li > div > textarea {
+    height: 2em;
+    border-radius: 4px;
+    padding: 0.1rem 0.25rem;
+    margin-right: 0.25rem;
+  }
+  
+}
+
+@media screen and (max-width: 640px) {
+  .responsive-table .table-header {
+    padding: 0.25em 3em;
+  }
+  .responsive-table li,  .responsive-table li textarea {
+    font-size: 0.5rem;
+  }
+
+  .table-container {
+    margin: 2em auto 0 auto ;
+  }
+
+  .responsive-table li button {
+    border-radius: 2px;
+  }
+  
+}
+ 
+@media screen and (max-width: 360px) {
+  ul.responsive-table {
+    margin: 0;
+    padding: 0 0.25em;
+  }
+  .table-container{
+    padding: 0 0.25em;
+    margin-top: 1.5em;
+  }
+  
+  .responsive-table .table-header , .responsive-table .table-container li { 
+    padding: 0.5rem;
+  }
+  .responsive-table li, .responsive-table li textarea {
+    border-radius: 3px;
+    font-size: 0.4rem;
+  }
+
+  .table-row .action {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table-row .action button {
+    width: 100%;
+  }
+
+  .table-row .action button:first-of-type {
+    margin-bottom: 0.2em;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  ul.responsive-table {
+    padding: 0 0.15em;
+    margin-top:0.5em;
+  }
+  .table-container{
+    padding: 0 0.15em;
+  }
+  
+  .responsive-table .table-header , .responsive-table .table-container li { 
+    padding: 0.35rem;
+  }
+  .responsive-table li, .responsive-table li textarea {
+    border-radius: 3px;
+    font-size: 0.25rem;
+  }
+
+  .table-row .action button {
+    border-radius: 1.5px;
+  }
+
+  .table-row .action button:first-of-type {
+    margin-bottom: 0.2em;
+  }
+}
+
